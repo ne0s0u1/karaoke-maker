@@ -422,7 +422,7 @@ function App() {
                     <div className="volume-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '11px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                         <i className="ph ph-music-notes" style={{ fontSize: '16px', color: '#a5b4fc' }}></i>
-                        <span>Accompaniment Volume</span>
+                        <span>Instruments Volume</span>
                       </div>
                       <span style={{ color: 'var(--text-primary)', fontWeight: '600' }}>{musicVol}%</span>
                     </div>
