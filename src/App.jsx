@@ -392,7 +392,7 @@ function App() {
 
               <div className="modal-details-body" style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '12px', display: 'flex', gap: '12px', marginBottom: '20px' }}>
-                  <img src="https://images.unsplash.com/photo-1459749411177-042180ce673c?w=100&h=100&fit=crop" style={{ width: '48px', height: '48px', borderRadius: '6px', objectFit: 'cover' }} alt="Song" />
+                  <div style={{ width: '48px', height: '48px', borderRadius: '6px', backgroundColor: 'var(--brand-primary)', flexShrink: 0 }} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                     <span style={{ fontSize: '13px', fontWeight: 'bold' }}>Saltwater Letters</span>
                     <span style={{ fontSize: '11px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>Indie Pop, Female Voice, Dreamy, Soft Drums, Clean Guitar, Airy Synths, Heartfelt</span>
