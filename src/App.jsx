@@ -45,6 +45,8 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   const [autoLyrics, setAutoLyrics] = useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [voiceVol, setVoiceVol] = useState(100);
   const [musicVol, setMusicVol] = useState(100);
 
@@ -225,8 +227,28 @@ function App() {
             </div>
 
             <div className="ops-card">
+              <span className="ops-card-title">Lyrics Settings</span>
               <div className="ops-group" style={{ gap: '1px', backgroundColor: 'transparent', padding: 0, border: 'none', boxShadow: 'none' }}>
-                <div className="ops-row" style={{ ...(!autoLyrics && activeUpload !== 'workspace' ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderBottom: 'none' } : {}), ...(activeUpload === 'workspace' ? { opacity: 0.6, pointerEvents: 'none' } : {}) }}>
+                <div className="ops-row" style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0, borderBottom: 'none', position: 'relative' }}>
+                  <label>Language</label>
+                  <div className="language-selector-wrapper">
+                    <div className="style-preview" onClick={() => setShowLanguageMenu(!showLanguageMenu)}>
+                      <span>{selectedLanguage}</span>
+                      <i className="ph ph-caret-up-down" style={{ fontSize: '14px', marginLeft: '4px' }}></i>
+                    </div>
+                    {showLanguageMenu && (
+                      <div className="language-dropdown-menu">
+                        <button className={`language-option ${selectedLanguage === 'English' ? 'active' : ''}`} onClick={() => { setSelectedLanguage('English'); setShowLanguageMenu(false); }}>English</button>
+                        <button className={`language-option ${selectedLanguage === 'German' ? 'active' : ''}`} onClick={() => { setSelectedLanguage('German'); setShowLanguageMenu(false); }}>German</button>
+                        <button className={`language-option ${selectedLanguage === 'French' ? 'active' : ''}`} onClick={() => { setSelectedLanguage('French'); setShowLanguageMenu(false); }}>French</button>
+                        <button className={`language-option ${selectedLanguage === 'Spanish' ? 'active' : ''}`} onClick={() => { setSelectedLanguage('Spanish'); setShowLanguageMenu(false); }}>Spanish</button>
+                        <button className={`language-option ${selectedLanguage === 'Portuguese' ? 'active' : ''}`} onClick={() => { setSelectedLanguage('Portuguese'); setShowLanguageMenu(false); }}>Portuguese</button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="ops-row" style={{ borderTopLeftRadius: 0, borderTopRightRadius: 0, ...(activeUpload === 'workspace' ? { opacity: 0.6, pointerEvents: 'none' } : {}) }}>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <label>Auto Recognize Lyrics</label>
                     {activeUpload === 'workspace' && (
